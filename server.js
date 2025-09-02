@@ -41,4 +41,9 @@ app.get('/order/:orderId', (req, res) => {
   res.json(orderPayments);
 });
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'healthy', service: 'payment-service' });
+});
+
 app.listen(3004, () => console.log('Payment Service running on port 3004'));
